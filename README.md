@@ -13,17 +13,28 @@ Vorbereitung des Ubuntu-Systems
 * sudo apt-get install python3-pip
 * sudo apt-get install mongodb
 
-Installation von Python-Add-Ons auf dem Server
-----------------------------------------------
+Binaries zum Indexieren von Content
+-----------------------------------
 
-* pip3 install virtualenv
+* sudo apt-get install wv
+* sudo apt-get install poppler-utils
 
 Vorbereitung und Durchführung des Plone-Buildouts
 -------------------------------------------------
 
 * ~ > git clone https://github.com/novareto/plone52_buildout.git $projectname
 * ~ > cd $projectname
-* ~/$projectname > virtualenv .
+* ~/$projectname > python3 -m venv .
 * ~/$projectname > ./bin/pip install -r requirements.txt
+* ~/$projectname > ./bin/buildout
+
+Buildout mit Developer-Tools
+----------------------------
 * ~/$projectname > ./bin/buildout -c develop.cfg
 
+Anpassung der buildout.cfg nach git clone
+-----------------------------------------
+
+* user=admin:admin
+* buildout-user = teamweb
+* Portnummern der Clients
